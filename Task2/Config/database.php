@@ -23,8 +23,6 @@ Class Database
         $this->db_name = $_ENV["DATABASE_NAME"];
         $this->username = $_ENV["POSTGRES_USER"];
         $this->password = $_ENV["POSTGRES_PASSWORD"];
-        echo $this->host;
-        var_dump($this->host);
         try{
             $this ->connection = new PDO("pgsql:host=" . $this->host. ";port=" . $this->port . ";dbname=" . $this->db_name . ";user=" . $this->username . ";password=" . $this->password);
             $this->connection->exec("set names utf8");
@@ -35,5 +33,3 @@ Class Database
     }
 
 }
-$database = new Database();
-var_dump($database->getConnection());

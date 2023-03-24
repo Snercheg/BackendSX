@@ -1,0 +1,54 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+    user_controller_get_item:
+        path: user/get/{id}
+        controller: App\Controller\UserController::getItem
+        methods: GET
+        # get instruction
+        # curl http(s)://localhost:port/user/get/{id}
+
+    user_controller_get_items:
+        path: user/getitems
+        controller: App\Controller\UsersController::getItems
+        methods: GET
+        # get instruction
+        # curl http(s)://localhost:port/user/getitems
+
+    user_controller_create:
+        path: user/create
+        controller: App\Controller\UserController::create
+        methods: POST
+        # post instruction
+        # curl -X POST http(s)://localhost:port/user/create
+        # -H 'Content-Type: application/json'
+        # -d '{"username": "username", "firstName": "firstName", "lastName": "lastName", "phoneNumber": "phoneNumber"}'
+
+    user_controller_update:
+        path: user/update/{id}
+        controller: App\Controller\UserController::put
+        methods: PUT
+        # put instruction
+        # curl -X PUT -H "Content-Type: application/json"
+        # -d '{"username": "username", "firstName": "firstName", "lastName": "lastName", "phoneNumber": "phoneNumber"}'
+        # http(s)://localhost:port/user/update/{id}
+
+    user_controller_patch:
+        path: user/patch/{id}
+        controller: App\Controller\UserController::patch
+        methods: PATCH
+        # patch instruction
+        # curl -X PATCH
+        # -H "Content-Type: application/json"
+        # -d '{"username": "username", "firstName": "firstName", "lastName": "lastName", "phoneNumber": "phoneNumber"}'
+        # http(s)://localhost:port/patch/{id}
+
+    user_controller_delete:
+        path: user/delete/{id}
+        controller: App\Controller\UserController::delete
+        methods: DELETE
+        # delete instruction
+        # curl -X DELETE http(s)://localhost:port/user/delete/{id}
